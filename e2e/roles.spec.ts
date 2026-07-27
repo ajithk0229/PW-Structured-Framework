@@ -7,7 +7,7 @@ test.describe('Roles page test', () => {
     let rolepage: Rolespage
 
     test.beforeEach(async ({ pagewithlogin }) => {
-       pagewithlogin.setDefaultTimeout(120000)
+        pagewithlogin.setDefaultTimeout(60000)
         rolepage = new Rolespage(pagewithlogin)
     })
 
@@ -16,7 +16,7 @@ test.describe('Roles page test', () => {
         await rolepage.verfiyrolespage()
         await rolepage.verifyaddrolesbutton()
     })
-     test('TC-002: Verify the user can create the role', async () => {
+    test('TC-002: Verify the user can create the role', async () => {
         await rolepage.navigateviaHomepage('Administrator', 'Roles')
         await rolepage.verfiyrolespage()
         await rolepage.verifyaddrolesbutton()

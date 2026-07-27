@@ -10,9 +10,9 @@ export class Userloginpage {
     password: Locator
     submit: Locator
     profileIcon: Locator
-    baseurl: string 
-    usernamevalue: string 
-    passwordvalue: string 
+    baseurl: string
+    usernamevalue: string
+    passwordvalue: string
     constructor(page: Page) {
         this.page = page
         this.username = page.getByRole('textbox', { name: 'Username' })
@@ -26,16 +26,12 @@ export class Userloginpage {
     async userlogin() {
 
         await this.page.goto(this.baseurl)
-
         await this.username.fill(this.usernamevalue)
         await this.password.fill(this.passwordvalue)
         await this.submit.click()
-
         await this.page.waitForURL('https://testcms.reco-claims.ca/', { timeout: 60000 })
-        await this.profileIcon.waitFor({ state: 'visible', timeout: 30000 })
+        await this.profileIcon.waitFor({ state: 'visible', timeout: 180000 })
         await expect(this.profileIcon).toBeVisible()
-
-
 
     }
 

@@ -9,6 +9,7 @@ export class Rolespage extends Commonpage {
     }
 
     async verfiyrolespage() {
+        await this.page.waitForURL('https://testcms.reco-claims.ca/application-roles',{timeout:30000})
         await this.page.getByRole('heading', { name: 'Roles', exact: true }).waitFor({ state: 'visible', timeout: 30000 })
         await expect(this.page.getByRole('heading', { name: 'Roles', exact: true })).toBeVisible()
     }
