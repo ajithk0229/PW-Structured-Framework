@@ -13,5 +13,8 @@ test.describe('Claims page test', () => {
     test('TC-001:Verify the claims page headers', async () => {
         await claimspage.verifyheader(Claimspageheader)
     })
+    test('TC-002:Verify the filtered values',async()=>{
+        await claimspage.verifyfiltervalues()
+    })
 
 })

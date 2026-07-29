@@ -26,7 +26,7 @@ export class Commonpage {
         for (const header of headers) {
             await expect(this.page.locator('thead th').getByText(header)).toBeVisible()
         }
-
+   
 
 
     }
